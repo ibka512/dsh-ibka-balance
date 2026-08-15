@@ -1,7 +1,6 @@
 {
   "name": "dsh-ibka-balance",
-  "version": "1.0.0",
-  "private": true,
+  "version": "1.0.1",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -10,8 +9,18 @@
     "./package.json": "./package.json"
   },
   "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
     "client": {
-      "platform": "web"
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ]
     }
-  }
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml"
+  ]
 }
